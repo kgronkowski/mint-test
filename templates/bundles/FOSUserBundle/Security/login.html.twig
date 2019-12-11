@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+  <div class="row justify-content-center">
+    <div class="col-3">
+      {{ include('@FOSUser/Security/login_content.html.twig') }}
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-3">
+      Do not have account create one <a href="{{ path('fos_user_registration_register') }}">here</a>
+    </div>
+  </div>
+
+{% endblock %}
