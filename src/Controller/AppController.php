@@ -16,6 +16,9 @@ class AppController extends AbstractController
      */
     public function index()
     {
+        if ($this->getUser()) {
+            return $this->redirectToRoute('users_list');
+        }
         return $this->render('index.html.twig');
     }
 
