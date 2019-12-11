@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+  <section>
+    {% if not app.user %}
+    <div class="d-flex flex-column">
+      <div>
+        To view list of user You have to
+        <a href="{{ path('fos_user_security_login') }}" class="btn btn-primary">Sign In</a>
+      </div>
+      <div>
+        If you do not have an account create one.
+        <a href="{{ path('fos_user_registration_register') }}" class="btn btn-secondary">Sign Up</a>
+      </div>
+    </div>
+    {% else %}
+      <h2>You are logged in</h2>
+      <a href="{{ path('users_list') }}" class="btn btn-primary">Go to users list</a>
+    {% endif %}
+  </section>
+
+{% endblock %}
